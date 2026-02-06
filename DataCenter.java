@@ -6,6 +6,14 @@ public class DataCenter {
     private static ArrayList<Student> students = new ArrayList<>();
     private static ArrayList<Session> sessions = new ArrayList<>();
     private static ArrayList<Evaluation> evaluations = new ArrayList<>();
+    private static ArrayList<Evaluator> evaluators = new ArrayList<>();
+
+    // Seed default evaluators so the system has some to work with
+    static {
+        evaluators.add(new Evaluator("Dr. Ahmad", "Artificial Intelligence"));
+        evaluators.add(new Evaluator("Dr. Sarah", "Cybersecurity"));
+        evaluators.add(new Evaluator("Dr. Kumar", "Data Science"));
+    }
     
     // Student methods
     public static void addStudent(Student s) {
@@ -49,6 +57,36 @@ public class DataCenter {
         return evaluations;
     }
     
+    // Evaluator methods
+    public static void addEvaluator(Evaluator ev) {
+        evaluators.add(ev);
+    }
+
+    public static ArrayList<Evaluator> getEvaluators() {
+        return evaluators;
+    }
+
+    // Find evaluator by name
+    public static Evaluator findEvaluator(String name) {
+        for (Evaluator ev : evaluators) {
+            if (ev.getName().equals(name)) {
+                return ev;
+            }
+        }
+        return null;
+    }
+
+    // Find all sessions assigned to a specific evaluator
+    public static ArrayList<Session> getSessionsForEvaluator(String evaluatorName) {
+        ArrayList<Session> result = new ArrayList<>();
+        for (Session s : sessions) {
+            if (s.getAssignedEvaluators().contains(evaluatorName)) {
+                result.add(s);
+            }
+        }
+        return result;
+    }
+
     // Find best oral presenter
     public static Student getBestOral() {
         Student best = null;

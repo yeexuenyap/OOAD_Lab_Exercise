@@ -58,6 +58,51 @@ public class Student {
         return totalScore;
     }
 
+    // --- Additional Getters (Required for Reports & Evaluation Display) ---
+    public String getResearchTitle() {
+        return researchTitle;
+    }
+
+    public String getResearchAbstract() {
+        return researchAbstract;
+    }
+
+    public String getSupervisorName() {
+        return supervisorName;
+    }
+
+    public int getClarityScore() {
+        return clarityScore;
+    }
+
+    public int getMethodologyScore() {
+        return methodologyScore;
+    }
+
+    public int getResultsScore() {
+        return resultsScore;
+    }
+
+    public int getPresentationScore() {
+        return presentationScore;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public String getSessionVenue() {
+        return sessionVenue;
+    }
+
+    public String getSessionDate() {
+        return sessionDate;
+    }
+
+    public String getBoardID() {
+        return boardID;
+    }
+
     public void setAssignment(String date, String venue, String boardID) {
         this.sessionDate = date;
         this.sessionVenue = venue;
