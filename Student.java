@@ -1,15 +1,14 @@
-
 public class Student {
 
-    // 学生基础资料 (Member 3 负责填入)
+    // --- Basic Student Information ---
     private String name;
     private String researchTitle;
     private String researchAbstract;
     private String supervisorName;
     private String presentationType; // "Oral" or "Poster"
-    private String submissionFilePath; // 绝对路径，用于评估员打开文件
+    private String submissionFilePath; // Absolute path used by evaluators to open the file
 
-    // 评审资料 (Member 4 负责填入)
+    // --- Evaluation Data ---
     private int clarityScore = 0;
     private int methodologyScore = 0;
     private int resultsScore = 0;
@@ -17,12 +16,12 @@ public class Student {
     private String comments = "";
     private int totalScore = 0;
 
-    // 场次安排 (Member 5 负责填入)
+    // --- Session Arrangements ---
     private String sessionVenue = "Unassigned";
     private String sessionDate = "Unassigned";
-    private String boardID = "N/A"; // 仅限 Poster
+    private String boardID = "N/A"; // Applicable for Poster presentations only
 
-    // 构造函数
+    // Constructor
     public Student(String name, String title, String abs, String supervisor, String type, String path) {
         this.name = name;
         this.researchTitle = title;
@@ -32,7 +31,7 @@ public class Student {
         this.submissionFilePath = path;
     }
 
-    // --- Getter 和 Setter (必须要有，方便其他模块读取和修改数据) ---
+    // --- Getters and Setters ---
     public String getName() {
         return name;
     }
